@@ -1,0 +1,167 @@
+<!--
+ Quara Theme by OllieJW (https://olliejw.me)
+ License - https://olliejw.me/tos
+-->
+<!DOCTYPE html>
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<head>
+  <title>XminerSMP | Minecraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="title" content="XminerSMP | Minecraft">
+  <meta name="theme-color" content="#4bb4f1">
+
+  <!-- Edit this to change staff cards! -->
+  <script id="staff-template" type="text/template">
+    <div class="staff-card shrink">
+      <img src="https://mc-heads.net/avatar/{{ uuid }}">
+      <h3>{{ name }}</h3>
+      <h4>{{ rank }}</h4>
+    </div>
+  </script>
+
+  <script id="vote-template" type="text/template">
+    <div class="vote-card shrink shrink-dark">
+      <img src="{{ image }}">
+      <h3>{{ service }}</h3>
+      <h4><a href="{{ link }}" class="btn">Vote</a></h4>
+    </div>
+  </script>
+
+  <!--
+	Notice:
+	When you make changes to config,
+	add ?v and a random number to config.css/js
+	Example: <link rel="stylesheet" href="config.css?v=100">
+  -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+  <script src="js/fireflies.js"></script>
+  <script src="js/main.js"></script>
+  <script src="config.js?v=10"></script>
+  
+  <script>tosAgreed = true</script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Raleway|Quicksand">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="config.css?v=100">
+</head>
+
+<body>
+
+  <div id="target"></div>
+
+  <script id="template" type="text/x-handlebars-template">
+
+  <header>
+    <div class="hero" id="hero">
+      <h1>Welcome to XminerMC!</h1>
+      <h3 class="server-status-container">Join <span class="server-status info">0</span> other people on <span class="info ip" id="ip" onclick="copyIP()">{{server_ip}}</span></h3>
+	  <div id="pinned">
+        <div class="pinned-card shrink shrink-pinned">
+          <i class="fas fa-thumbtack"></i><strong>Vanilla Bedrock</strong>
+          <p>Server sẽ không reset map , mở tới khi nào không còn kinh phí , mọi công trình bạn xây lên sẽ là 1 phần lịch sử của server</p>
+          <a href="#" class="btn"> Version: 1.19 ( Java ) | Latest ( Bedrock )</a>
+        </div>
+      </div>
+	</div>
+  </header>
+
+  <section id="header" class="dark">
+    <nav class="nav">
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://xminersmp.blogspot.com/">Gallery</a></li>
+        <li><a href="https://discord.gg/CkPKDjgZBf">Discord</a></li>
+        <li><a href="https://www.facebook.com/groups/580488376333077">Facebook</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="light">
+    <p class="enlarge">
+      <strong>About us</strong>
+      Xin chào, chúng tôi là XminerMC - cộng đồng giao lưu, trò chuyện về Minecraft
+      đồng thời là 1 máy chủ minecraft thân thiện cho mọi người.
+    </p>
+    <p class="enlarge">
+      <strong>History</strong>
+      XminerMC được thành lập vào năm 2019, là một máy chủ nhỏ, được mọi người
+      chung tay xây dựng và phát triển tồn tại đến bây giờ.
+    </p>
+  </section>
+
+  <section class="dark">
+    <h1>Some of our features</h1>
+    <div class="feature right">
+      <img src="img/feature-1.jpg" width="500px" class="enlarge">
+      <p class="enlarge">
+        <strong>Whitelisted</strong>
+        XminerMC Là 1 máy chủ riêng tư, với thành viên được chọn lọc kĩ càng nhằm tăng chất lượng trải nghiệm.
+      </p>
+    </div>
+    <hr>
+    <div class="feature left">
+      <img src="img/feature-2.jpg" width="500px" class="enlarge">
+      <p class="enlarge">
+        <strong>Cross-Platform</strong>
+        Bạn có thể vào server trên nhiều nền tảng khác nhau như Java ( cho máy tính ) , PE ( Cho điện thoại ) , ...
+      </p>
+    </div>
+    <hr>
+    <div class="feature right">
+      <img src="img/feature-3.jpg" width="500px" class="enlarge">
+      <p class="enlarge">
+        <strong>Building</strong>
+        XminerSMP là nơi hội tụ rất nhiều Builders, Restone Engineer, Pvper, Farmer,.. các bạn có thể thỏa sức xây dựng, khám phá, mà không lo bị phá base , grief.
+      </p>
+    </div>
+    <hr>
+    <div class="feature left">
+      <img src="img/feature-4.jpg" width="500px" class="enlarge">
+      <p class="enlarge">
+        <strong>Always online</strong>
+        Server sử dụng máy chủ vật lí mở 24/7 , với ping , tps luôn ổn định, mượt mà , bạn có thể chơi bất cứ lúc nào bạn muốn ( Nhưng đôi lúc server vẫn sẽ gặp sự cố, bảo trì! )
+      </p>
+    </div>
+  </section>
+
+  <section class="light">
+    <h1>Our staff team</h1>
+    <div id="staff" class="grid"></div>
+  </section>
+
+  <section class="dark">
+    <h1>Rules</h1>
+    <div id="news">
+      <div class="news-card">
+        <strong>Đọc kĩ trước khi chơi</strong>
+        <p>Không phá nhà, công trình của người khác , không làm lava cast , lag machine , không trộm cắp</p>
+        <p>Không sử dụng hack , không quảng cáo máy chủ dưới mọi hình thức</p>
+        <a href="#" class="btn">Tiên học lễ - hậu học văn</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <!-- DO NOT REMOVE -->
+    <!-- DO NOT REMOVE -->
+    <!-- DO NOT REMOVE -->
+    <!-- DO NOT REMOVE -->
+    <a href="https://client.olliejw.me"><img alt="Made by Xminer" title="Made by Xminer" src="https://lh3.googleusercontent.com/0RlVHk28VjW8wGvGuX1sFPkmTi2XKO60PqkMNb5fIePeEVsdOSz-VB9NW2XGUv_QgMkELg85eu8Wg6b3R78xQRoC0423sYgYbU-_b7X9yRJo_VRK0z41EKSF0s6FZQ5-v2NxqgcXEEp6EloND-BDKTp0qdf32wDO1dONBnnoVH282nk0Nz8vvA2W9tPWvmr3_IkW3enZ41d6TCBi9E21znWJWxx8oVHxJKZ3vv_OKTP1rGWqorXBoqG6mXoGsQ5ac6IOXK1O_0R054tqg4CawGU2nTIJOwZsVm4J4ws-XtZeR138yZbXpxZNV7w0AY7mI473cZWy6clYhdyBCXY9qm7Ofxh_Ypzj1yoojYOelDmyKvneQjKLfDvBd101B5Zuzh8yZwI1LMGR_1ssIhpupDqCjIgbpMLe3g5Y1HchwMCBMHwniKpDq2RD6DNYrXNBbFSmIocuHc9i0584tJ-LAm-bDUKaBHhVrlnaUn9xhfO5RFHN_ZLrp6JDJhhnao1wZMbal3TOfd-OUVVfceQe7BqxxbdKuIZh2U6jSNgKoo53f7L6GSVjO7hqAxuvGWMkNUbf0LzJBzUtg3ChS_T7jHI3ObxFeWnwZV3gwub0EZtxOubAPa0jm8RxMOown3-78pCRn1IhMBRxpduDlwu-JVuz8PMYuGOGCcGM5cXiYRCGMG-zh-zfQeMlTXPSNkbokXkHqqXApe6MDY1mdROS0oA=s256-no?authuser=0" style="height:4em"></a>
+    <!-- END DO NOT REMOVE -->
+    <!-- END DO NOT REMOVE -->
+    <!-- END DO NOT REMOVE -->
+    <!-- END DO NOT REMOVE -->
+    <p>Copyright &copy; {{server_name}} 2019</p>
+  </footer>
+  </script>
+  
+  <!-- License -->
+  <script src="https://remote.olliejw.me/license.js"></script>
+</body>
